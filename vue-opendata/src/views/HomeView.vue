@@ -1,9 +1,14 @@
+<template>
+  <div>
+    <TestingStuff/>
+  </div>
+</template>
+
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import TestingStuff from '@/components/TestingStuff.vue';
+
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style lang="css" scoped>
+
+</style>
