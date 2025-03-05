@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <TestingStuff/>
-  </div>
+  <h1>Text</h1>
 </template>
 
 <script setup>
-import TestingStuff from '@/components/TestingStuff.vue';
+
 
 </script>
 

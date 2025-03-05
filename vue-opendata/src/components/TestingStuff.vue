@@ -1,11 +1,11 @@
+
 <template>
-  <div class="flex justify-evenly items-center">
-    <div class="w-1/2 bg-gray-500 rounded-lg font-serif flex justify-evenly items-center">
+  <div class="w-full h-full flex justify-center items-center">
+    <div class="w-1/2 h-1/10 bg-gray-500 rounded-lg font-serif flex justify-evenly items-center">
       <i class="pi pi-home"></i>
-      <div class=" w-2/3 flex justify-evenly items-center">
-        <i class="pi pi-chart-pie"></i>
-        <i class="pi pi-chart-bar"></i>
-      </div>
+      <i class="pi pi-chart-pie"></i>
+      <i class="pi pi-chart-bar"></i>
+      <i class="pi pi-calendar"></i>
     </div>
   </div>
 </template>
