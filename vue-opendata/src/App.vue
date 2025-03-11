@@ -7,32 +7,57 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <div class="display w-full flex justify-evenly items-center">
       
-      <div class="inputs w-3/7 h-9/10 bg-black p-3">
+      <div class="inputs w-3/7 h-9/10 p-3 bg-slate-500 rounded-lg shadow">
 
-        <div class="title w-full h-1/10 bg-white flex justify-center items-center font-serif font-bold underline text-fuchsia-700">
+        <div class="textcolor w-full h-1/10 flex justify-center items-center font-serif font-bold underline">
           <h1 class="text-[3vw]">Hate Crimes of NYC</h1>
         </div>
 
         <div class="items w-full h-9/10 flex justify-center items-center">
 
-          <div class="dropdowns w-1/2 h-full flex justify-center items-start">
+          <div class="dropdowns w-1/2 h-full flex flex-col justify-evenly items-center">
             <!-- dropdown component used thrice -->
-            <select class="text-fuchsia-500 bg-white rounded-lg focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 shadow-sm hover:bg-gray-100">
-              <option value="test1">Test1</option>
-              <option value="test2">Test2</option>
-              <option value="test3">Test3</option>
-            </select>
+            <div class="w-6/7 h-1/10">
+
+              <h1 class="text-gray-200 text-[1.5vw]">Placeholder:</h1>
+              <div class="w-full h-full flex justify-evenly items-center ml-3 mt-3">
+                <i class="pi pi-map-marker text-white text-[1.5vw] rounded-[50%] bg-gray-700 p-3"></i>
+                <select class="w-full h-full m-3 text-gray-200 bg-slate-400 rounded-lg focus:outline-none focus:border-slate-800 focus:ring-2 focus:ring-slate-800 shadow-sm hover:bg-slate-600 text-center text-[1vw]">
+                  <option value="test1">Test1</option>
+                  <option value="test2">Test2</option>
+                  <option value="test3">Test3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="w-2/3 h-1/10">
+              <h1 class="text-gray-200 text-[1.5vw]">Placeholder:</h1>
+              <select class="w-full h-full m-3 text-gray-200 bg-slate-400 rounded-lg focus:outline-none focus:border-slate-800 focus:ring-2 focus:ring-slate-800 shadow-sm hover:bg-slate-600 text-center text-[1vw]">
+                <option value="test1">Test1</option>
+                <option value="test2">Test2</option>
+                <option value="test3">Test3</option>
+              </select>
+            </div>
+
+            <div class="w-2/3 h-1/10">
+              <h1 class="text-gray-200 text-[1.5vw]">Placeholder:</h1>
+              <select class="w-full h-full m-3 text-gray-200 bg-slate-400 rounded-lg focus:outline-none focus:border-slate-800 focus:ring-2 focus:ring-slate-800 shadow-sm hover:bg-slate-600 text-center text-[1vw]">
+                <option value="test1">Test1</option>
+                <option value="test2">Test2</option>
+                <option value="test3">Test3</option>
+              </select>
+            </div>
 
           </div>
 
-          <div class="data">
+          <div class="data w-1/2 h-full">
 
           </div>
 
         </div>
         
       </div>
-      <div class="views w-3/7 h-9/10 bg-gray-800 p-3">
+      <div class="views w-3/7 h-9/10 p-3">
         <RouterView/>
       </div>
     </div>
@@ -62,5 +87,12 @@ import { RouterLink, RouterView } from 'vue-router'
 }
 .navbar{
   height: 10vh;
+}
+.textcolor{
+  color: rgb(255, 255, 255);
+}
+.dropdown{
+  border-color: rgb(61, 61, 87);
+  border-width: 0.3vw;
 }
 </style>
