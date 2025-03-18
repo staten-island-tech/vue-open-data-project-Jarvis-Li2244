@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import crimesNYC from './thing';
+import crimesNYC from './data.js';
 
 onMounted(() => {
   crimesNYC();

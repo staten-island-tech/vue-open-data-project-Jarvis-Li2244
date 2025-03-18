@@ -1,11 +1,11 @@
 import { ref } from "vue";
 
-const crime = ref("")
+export const crime = ref("")
 
-export default async function crimesNYC() {
+export async function crimesNYC() {
   let result = await fetch("https://data.cityofnewyork.us/resource/bqiq-cu78.json")
   let data = await result.json()
-  crime.value = data.results;
+  crime.value = data;
   return crime.value
 }
 
