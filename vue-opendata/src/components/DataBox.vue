@@ -5,9 +5,19 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
-import { crime, crimesNYC } from "./data.js";
+import { crime } from "./data.js";
 
+let array = []
+
+for (let i = 0; i < crime.value.length; i++) {
+    if (array.includes(crime.value[i].law_code_category_description)) {
+    } else {
+        array.push(crime.value[i].law_code_category_description)
+    }
+    console.log(crime.value[i].law_code_category_description, "thing")
+};
+
+console.log(array)
 
 </script>
 
