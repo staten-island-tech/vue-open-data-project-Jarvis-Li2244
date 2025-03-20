@@ -1,29 +1,33 @@
 <script setup>
+import { reactive } from 'vue';
 import { crimesNYC } from './components/data';
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import DataBox from './components/DataBox.vue';
 import DropdownButton from './components/DropdownButton.vue';
 import NavBar from './components/NavBar.vue';
 
-crimesNYC()
-
-const selections = [
+const selections = reactive([
   {
     title: "County",
     icon: "pi-map-marker",
-    options: ['BRONX', 'KINGS', 'NEW YORK', 'QUEENS', 'RICHMOND'],
+    options: ['ALL', 'BRONX', 'KINGS', 'NEW YORK', 'QUEENS', 'RICHMOND'],
+    value: 'ALL'
   },
   {
     title: "Offense Category",
     icon: "pi-users",
-    options: ['Religion/Religious Practice', 'Sexual Orientation', 'Race/Color', 'Gender', 'Ethnicity/National Origin/Ancestry', 'Unclassified'],
+    options: ['ALL', 'Religion/Religious Practice', 'Sexual Orientation', 'Race/Color', 'Gender', 'Ethnicity/National Origin/Ancestry', 'Unclassified'],
+    value: 'ALL'
   },
   {
     title: "Crime Category",
     icon: "pi-folder",
-    options: ['FELONY', 'MISDEMEANOR', 'VIOLATION', 'INVESTIGATION'],
+    options: ['ALL', 'FELONY', 'MISDEMEANOR', 'VIOLATION', 'INVESTIGATION'],
+    value: 'ALL'
   }
-]
+])
+
+crimesNYC(selections[0].value, selections[1].value, selections[2].value)
 
 </script>
 
@@ -48,7 +52,7 @@ const selections = [
               :key="selection.title" 
               :selection="selection"
               v-model="selectionValue"
-              @change="console.log(selectionValue)"
+              @change="selection.value = selectionValue, crimesNYC(selections[0].value, selections[1].value, selections[2].value)"
             />
             
           </div>

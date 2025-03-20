@@ -15,16 +15,24 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
 const props = defineProps({
     selection: Object
 })
 
+const modelValue = ref('ALL')
 const emit = defineEmits(['update:modelValue'])
+
+function give_selectedValue(event) {
+    emit('update:modelValue', event.value)
+}
 
 function update_selectedValue(event) {
     emit('update:modelValue', event.target.value)
 }
 
+give_selectedValue(modelValue)
 </script>
 
 <style lang="css" scoped>
