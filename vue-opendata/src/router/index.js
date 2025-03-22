@@ -14,23 +14,19 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/about',
-      name: 'about',
-      component: AboutView,
-      children: [
-        {
-          path: 'piechart',
-          component: PieChart
-        },
-        {
-          path: 'barchart',
-          component: BarChart
-        },
-        {
-          path: 'timechart',
-          component: TimeChart
-        }
-      ]
+      path: '/piechart',
+      name: 'piechart',
+      component: PieChart,
+    },
+    {
+      path: '/barchart',
+      name: 'barchart',
+      component: BarChart,
+    },
+    {
+      path: '/timechart',
+      name: 'timechart',
+      component: TimeChart,
     },
   ],
 })

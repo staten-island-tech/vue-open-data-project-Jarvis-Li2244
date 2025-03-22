@@ -36,7 +36,7 @@ crimesNYC(selections[0].value, selections[1].value, selections[2].value)
 
     <div class="display w-full flex justify-evenly items-center">
       
-      <div class="inputs w-3/7 h-9/10 p-3 bg-slate-500 rounded-lg shadow">
+      <div class="inputs w-3/7 h-9/10 p-3 bg-slate-500 rounded-lg shadow-md">
 
         <div class="textcolor w-full h-2/10 flex flex-col justify-center items-center font-serif font-normal">
           <h1 class="text-[3vw] font-bold underline">Hate Crimes</h1>
@@ -69,7 +69,7 @@ crimesNYC(selections[0].value, selections[1].value, selections[2].value)
         
       </div>
 
-      <div class="views w-3/7 h-9/10 p-3">
+      <div class="views w-3/7 h-9/10 p-3 bg-slate-500 rounded-lg shadow-md">
 
         <RouterView/>
 
