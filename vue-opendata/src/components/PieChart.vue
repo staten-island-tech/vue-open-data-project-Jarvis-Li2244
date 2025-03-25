@@ -1,40 +1,49 @@
 <template>
-    <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
-  <h1>hello</h1>
+  <Pie
+    :options="chartOptions"
+    :data="chartData"
+  />
 </template>
 
 <script setup>
-import Chart from 'chart.js/auto'
+import { ref, computed } from 'vue'
+import { getData, crime, labels } from './data'
+import { Pie } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, ArcElement, CategoryScale, LinearScale } from 'chart.js'
 
-(async function() {
-  const data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
-  ];
+computed
+getData('bias_motive_description', crime)
 
-  new Chart(
-    document.getElementById('acquisitions'),
+ChartJS.register(Title, Tooltip, ArcElement, CategoryScale, LinearScale)
+
+const chartData = ref({
+  labels: Object.keys(labels.value),
+  datasets: [
     {
-      type: 'bar',
-      data: {
-        labels: data.map(row => row.year),
-        datasets: [
-          {
-            label: 'Acquisitions by year',
-            data: data.map(row => row.count)
-          }
-        ]
+      data: Object.values(labels.value),
+      backgroundColor: ['rgb(54, 162, 235)', 'rgb(75, 192, 192)', 'rgb(153, 102, 255)'],
+      borderColor: ['rgb(54, 162, 235)', 'rgb(75, 192, 192)', 'rgb(153, 102, 255)'],
+      borderWidth: 1,
+      hoverOffset: 10
+    }
+  ]
+})
+
+const chartOptions = ref({
+  responsive: true,
+  plugins: {
+    title: {
+      display: true,
+      text: 'Crimes based on Group Targetted',
+      color: 'rgb(255, 255, 255)',
+      font: {
+        size: 32, 
+        weight: 'bold', 
+        family: 'Serif',  
       }
     }
-  );
-})();
+  }
+})
+
+console.log(labels.value)
 </script>
-
-<style lang="css" scoped>
-
-</style>

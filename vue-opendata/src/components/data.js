@@ -1,6 +1,7 @@
 import { ref } from "vue";
 
 export const crime = ref("")
+export const labels = ref([])
 
 export async function crimesNYC(county, offense_category, crime_category) {
   let result = await fetch("https://data.cityofnewyork.us/resource/bqiq-cu78.json")
@@ -12,4 +13,13 @@ export async function crimesNYC(county, offense_category, crime_category) {
   return crime.value
 }
 
-
+export function getData(filter, crime) {
+  labels.value = []
+  if (crime.value) {
+    crime.value
+      .forEach(item => {
+        let label = item[filter];
+        labels.value[label] = (labels.value[label] || 0) + 1;
+      });
+  }
+}

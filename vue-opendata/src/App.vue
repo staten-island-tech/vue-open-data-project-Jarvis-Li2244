@@ -69,7 +69,7 @@ crimesNYC(selections[0].value, selections[1].value, selections[2].value)
         
       </div>
 
-      <div class="views w-3/7 h-9/10 p-3 bg-slate-500 rounded-lg shadow-md">
+      <div class="views w-3/7 h-9/10 p-3 bg-slate-500 rounded-lg shadow-md flex justify-center">
 
         <RouterView/>
 
