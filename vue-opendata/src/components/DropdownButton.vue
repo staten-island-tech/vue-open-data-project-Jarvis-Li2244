@@ -4,7 +4,7 @@
 
         <h1 class="text-gray-200 text-[1.5vw]">{{ selection.title }}</h1>
         <div class="w-full h-1/2 flex justify-evenly items-center ml-3 mt-3">
-        <i class="pi pi-map-marker text-white text-[1.5vw] rounded-[50%] bg-gray-700 p-3"></i>
+        <i :class=selection.icon class="pi text-white text-[1.5vw] rounded-[50%] bg-gray-700 p-3"></i>
         <select :value="modelValue" @change=update_selectedValue class="w-full h-4/5 m-3 p-1 text-gray-200 bg-slate-400 rounded-lg focus:outline-none focus:border-slate-800 focus:ring-2 focus:ring-slate-800 shadow-sm hover:bg-slate-600 text-center text-[1.25vw]">
             <option v-for="option in selection.options" :value="option">{{ option.toUpperCase() }}</option>
         </select>
